@@ -1,0 +1,14 @@
+
+<div class="wrap">
+    <div class="search">
+        <input type="text" class="searchTerm" placeholder="What are you looking for?" #searchTerm >
+        <button type="submit" class="searchButton" (click)="search(searchTerm.value)">
+            <i class="fa fa-search"></i>
+        </button>
+    </div>
+</div>
+<ul *ngIf="imgHistory">
+    <button class="btn btn-info" *ngFor="let history of imgHistory;" routerLink="/images/{{history}}" >
+        {{ historyObj[history]}}
+    </button>
+</ul>
