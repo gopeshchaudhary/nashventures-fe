@@ -9,6 +9,7 @@ import {FlashMessagesService} from 'ngx-flash-messages';
     styleUrls: ['./listimg.component.css']
 })
 export class ListimgComponent implements OnInit {
+    private images: Array<string>;
 
     constructor(private  route: ActivatedRoute, private _flash: FlashMessagesService, private _gateway: GatewayService) {
     }
@@ -22,7 +23,7 @@ export class ListimgComponent implements OnInit {
     showImg(searchid) {
         this._gateway.loadImages(searchid).subscribe((res: any) => {
             if (res.data) {
-                console.log(res);
+                this.images = res.data;
             }
         }, (error) => {
             this._flash.show('Failed To Get History', {

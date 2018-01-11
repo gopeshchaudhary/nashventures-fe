@@ -1,3 +1,6 @@
-<p>
-  listimg works!
-</p>
+<button routerLink="/" class="btn btn-primary">Back</button>
+<ul *ngIf="images">
+  <li *ngFor="let image of images;" id="trow">
+    <img src='{{image}}'/>
+  </li>
+</ul>
