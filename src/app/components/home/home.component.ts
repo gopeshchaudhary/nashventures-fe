@@ -40,14 +40,13 @@ export class HomeComponent implements OnInit {
 
     listImages() {
         this._gateway.listImages().subscribe((res: any) => {
-            if (res.data) {
+            if (res.data && res.data.length) {
                 this.imgHistory = res.data.map((history) => {
                     const key = Object.keys(history)[0];
                     this.historyObj[key] = history[key];
                     return key;
                 });
             }
-            console.log(this.imgHistory);
         }, (error) => {
             this._flash.show('Failed To Get History', {
                 classes: ['alert', 'alert-danger'],

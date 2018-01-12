@@ -9,7 +9,8 @@ import {FlashMessagesService} from 'ngx-flash-messages';
     styleUrls: ['./listimg.component.css']
 })
 export class ListimgComponent implements OnInit {
-    private images: Array<string>;
+    public images: Array<string>;
+    public  serverUrl = '/images/';
 
     constructor(private  route: ActivatedRoute, private _flash: FlashMessagesService, private _gateway: GatewayService) {
     }

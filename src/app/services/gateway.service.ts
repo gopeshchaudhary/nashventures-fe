@@ -9,9 +9,9 @@ export class GatewayService {
     private getUrl: string;
 
     constructor(private _http: HttpClient) {
-        this.searchUrl = 'http://localhost:5000/search';
-        this.listUrl = 'http://localhost:5000/search/list';
-        this.getUrl = 'http://localhost:5000/search/images';
+        this.searchUrl = '/search';
+        this.listUrl = '/search/list';
+        this.getUrl = '/search/images';
     }
 
     doSearch(q) {
